@@ -1,0 +1,79 @@
+:root {
+  --azul-claro: #3498db;
+  --azul-medio: #2980b9;
+  --azul-oscuro: #1f618d;
+  --gris-claro: #f5f5f5;
+  --gris-medio: #ccc;
+  --gris-oscuro: #333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.acordeon {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bloque {
+  margin-bottom: 10px;
+  border: 1px solid var(--gris-medio);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center; /* Centrar el texto */
+  color: var(--azul-oscuro);
+}
+
+.h2 {
+  padding: 10px;
+  margin: 0;
+  background-color: var(--gris-claro);
+  border-bottom: 1px solid var(--gris-medio);
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.contenido h3{
+
+  font-size: 1.5rem;
+}
+
+.contenido {
+  padding: 10px;
+  display: none;
+  font-size: 1.5rem;
+  text-align: justify;
+
+}
+
+.bloque.activo .contenido {
+  display: block;
+}
+
+.h2::after {
+  content: "\25BC";
+  float: right;
+  position: relative;
+  color: black; /* Color por defecto */
+  transition: transform 0.3s, color 0.3s, font-size 0.3s; /* Transiciones para transformar, cambiar color y tamaño de fuente */
+}
+
+.h2.abierto::after {
+  transform: rotate(180deg); /* Rotar 180 grados cuando el acordeón está abierto */
+}
+
+.contenido p.small {
+  font-size: 1rem; /* Puedes ajustar el tamaño según sea necesario */
+}
